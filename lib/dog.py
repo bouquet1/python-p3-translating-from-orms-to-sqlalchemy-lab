@@ -4,10 +4,15 @@ def create_table(base, engine):
     Dog.metadata.create_all(engine)
 
 def save(session, dog):
-    pass
+    #add the dog object to session
+    session.add(dog)
+    #commit the transaction save dog to DB
+    session.commit()
 
 def get_all(session):
-    pass
+    # Query the database to retrieve all Dog records
+    dogs = session.query(Dog).all()
+    return(dogs)
 
 def find_by_name(session, name):
     pass
