@@ -3,6 +3,7 @@
 from sqlalchemy import (Column, String, Integer, create_engine)
 from sqlalchemy.ext.declarative import declarative_base\
 # from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import Session
 
 Base = declarative_base()
 
@@ -18,6 +19,6 @@ if __name__ == '__main__':
     Base.metadata.create_all(engine)
 
     # Session = sessionmaker(bind=engine)
-    # session = Session()
+    session = Session()
 
     
